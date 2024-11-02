@@ -13,14 +13,15 @@ Follow these steps to install and set up the project:
 ### Clone the repository:
 ```bash
 git clone https://github.com/NishatSultana241/PredictIF.git
-
+```
 ### Navigate to the project directory:
 ```bash
 cd PredictIF
-
+```
 ### Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
 
 
 
