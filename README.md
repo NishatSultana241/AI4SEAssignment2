@@ -22,7 +22,21 @@ cd PredictIF
 ```bash
 pip install -r requirements.txt
 ```
+### Usage:
+You can train the model using the model_train.py script and also can use the already trained model using the main.py script.
 
+### Model Training:
+The model can be trained using the preferred number of epochs from the command line argument.
+```bash
+python train_model.py --num_epochs 5
+```
+### Generating Responses from the Trained and Saved Model:
+At any point of the output
+```bash
+python main.py --index 5
+```
+### Features:
+Write down the features
 
 
 
