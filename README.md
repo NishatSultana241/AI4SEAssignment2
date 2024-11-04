@@ -31,9 +31,13 @@ The model can be trained using the preferred number of epochs from the command l
 python train_model.py --num_epochs 5
 ```
 ### Generating Responses from the Trained and Saved Model:
-At any point of the output
+To check any particular data from the test set just pass the --index of that particular data.
 ```bash
-python main.py --index 5
+python main.py --masked_data masked_data.csv --index 10 --output_csv single-test-result.csv
+```
+To check the value over the whole test set no need to provide the index value.
+```bash
+python main.py --masked_data masked_data.csv --output_csv full-test-results.csv
 ```
 ### Features:
 Write down the features
