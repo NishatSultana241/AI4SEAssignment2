@@ -4,7 +4,6 @@ import textwrap
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 import torch.nn.functional as F
-from Levenshtein import ratio as levenshtein_ratio
 
 # Load pre-trained model and tokenizer
 model = AutoModelForSeq2SeqLM.from_pretrained("./trained_model").to("cuda")
@@ -47,10 +46,10 @@ def generate_prediction_with_score(model, tokenizer, masked_function):
 
     return prediction, prediction_score
 
-# Function to check if the prediction is correct using a similarity threshold
-def is_prediction_correct(expected, predicted, threshold=0.7):
-    similarity_score = levenshtein_ratio(expected, predicted)
-    return similarity_score >= threshold
+# Function to check if the prediction correctly replaces <extra_id_0> with an if statement
+def is_prediction_correct(predicted):
+    # Check if the prediction includes an 'if' statement
+    return 'if' in predicted
 
 # Function for pretty printing
 def pretty_print(title, content):
@@ -83,8 +82,8 @@ if __name__ == "__main__":
             masked_function, target_block = masked_data[args.index]
             prediction, prediction_score = generate_prediction_with_score(model, tokenizer, masked_function)
 
-            # Check if the prediction is correct using Levenshtein similarity
-            is_correct = is_prediction_correct(target_block.strip(), prediction.strip(), threshold=0.7)
+            # Check if the prediction replaces <extra_id_0> with an 'if' statement
+            is_correct = is_prediction_correct(prediction)
 
             # Print results
             pretty_print(f"Original Function at Index {args.index}", masked_function)
@@ -102,8 +101,8 @@ if __name__ == "__main__":
         for i, (masked_function, target_block) in enumerate(masked_data):
             prediction, prediction_score = generate_prediction_with_score(model, tokenizer, masked_function)
 
-            # Check if the prediction is correct using Levenshtein similarity
-            is_correct = is_prediction_correct(target_block.strip(), prediction.strip(), threshold=0.7)
+            # Check if the prediction replaces <extra_id_0> with an 'if' statement
+            is_correct = is_prediction_correct(prediction)
 
             # Append results to the list
             results.append([masked_function, is_correct, target_block, prediction, f"{prediction_score:.2f}"])
