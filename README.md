@@ -6,6 +6,7 @@ Nishat Sultana
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Pre-processed Data](#Data)
 
 ## Installation
 Follow these steps to install and set up the project:
@@ -44,8 +45,11 @@ python main.py --masked_data masked_data.csv --output_csv full-test-results.csv
 ```
 ### Features:
     1. Fine-tuned a Pre-trained T5 Model to predict the masked "If" statements.
-    2. Fine-tuned on a large corpus of CodeSearchNet can be easily expanded for other predictions.
+    2. Fine-tuned on a large corpus of CodeSearchNet can be easily expanded for other predictions. 
     3. Calculates the prediction score and generates a csv file with the Actual Code masked,Generated Prediction,Expected If Condition etc.
+
+### Data:
+All of out pre-processed original,cleaned and masked data could be accessed here in this [link](https://drive.google.com/drive/folders/1fWlQioHs0yqGgH1Epxskn1qhuPTOAt9H?usp=sharing). The masked data is added in the Github repo to train and evaluate the code smoothly.
     
 
 
