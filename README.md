@@ -23,7 +23,7 @@ cd PredictIF
 pip install -r requirements.txt
 ```
 ### Usage:
-You can train the model using the model_train.py script and also can use the already trained model using the main.py script.
+To use this fine-tuned transformer model first you have to train it using the train_model.py script and you can train for any number of epochs. The trained_model directory stores a model that has been trained for 15 epochs with early stopping.
 
 ### Model Training:
 The model can be trained using the preferred number of epochs from the command line argument.
