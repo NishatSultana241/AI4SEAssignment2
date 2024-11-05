@@ -2,7 +2,7 @@
 **Built by the following authors**
 1. Nishat Sultana
 2. Liakot Khan Babu
-3. Sean 
+3. Sean McClary
 
 ## Table of Contents
 - [Installation](#installation)
