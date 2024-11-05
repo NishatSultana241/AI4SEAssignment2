@@ -31,7 +31,7 @@ The model can be trained using the preferred number of epochs from the command l
 python train_model.py --num_epochs 5
 ```
 ### Generating Responses from the Trained and Saved Model:
-To check any particular data from the test set just pass the --index of that particular data.
+To check any particular data from the test set just pass the index of that particular data from the test set provided-testset.csv.
 ```bash
 python main.py --masked_data masked_data.csv --index 10 --output_csv single-test-result.csv
 ```
@@ -40,7 +40,10 @@ To check the value over the whole test set no need to provide the index value.
 python main.py --masked_data masked_data.csv --output_csv full-test-results.csv
 ```
 ### Features:
-Write down the features
+    1. Fine-tunes a Pre-trained T5 Model to predict the masked "If" statements.
+    2. Fine-tuned on a large corpus of CodeSearchNet can be easily expanded for other predictions.
+    3. Calculates the prediction score and generates a csv file with the Actual Code masked,Generated Prediction,Expected If Condition etc.
+    
 
 
 
