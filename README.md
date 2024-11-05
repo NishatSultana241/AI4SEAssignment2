@@ -1,6 +1,8 @@
 # PredictIf(Training a Transformer model for Predicting if statements)
 **Built by the following authors**
-Nishat Sultana
+1. Nishat Sultana
+2. Liakot Khan Babu
+3. Sean 
 
 ## Table of Contents
 - [Installation](#installation)
